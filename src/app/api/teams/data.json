@@ -1,0 +1,112 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "nome": "Santos",
+      "imagem": "/santos.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "São Paulo",
+      "imagem": "/saopaulo.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Grêmio",
+      "imagem": "/gremio.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Cruzeiro",
+      "imagem": "/cruzeiro.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Internacional",
+      "imagem": "/inter.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Palmeiras",
+      "imagem": "/palmeiras.png",
+      "nacionalidade": {
+        "nome": "Brasil",
+        "bandeira": "/bandeiras/brasil.png"
+      },
+      "titulos": [
+        {
+          "id": 1,
+          "nome": "Libertadores da América",
+          "imagem": "/libertadores.png",
+          "peso": 10,
+          "qtdTitulos": 3
+        }
+      ]
+    }
+  ]
+}
