@@ -11,8 +11,8 @@ export default function Header() {
         </Link>
 
         <form className="flex w-[320px] items-center gap-3 rounded-full bg-[#c2c2c2] px-5 py-3 ring-zinc-700">
-          <Search className="w-5 h-5 text-[#d2d2d2]" />
-          <input className="flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-500" />
+          <Search className="w-5 h-5 text-[#f2f2f2]" />
+          <input className="flex-1 bg-transparent text-sm outline-none placeholder:text-[#333333]" />
         </form>
       </div>
 
