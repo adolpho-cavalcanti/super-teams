@@ -4,6 +4,7 @@ import Link from 'next/link'
 async function getAllTeams() {
   const response = await fetch('http://localhost:3000/api/teams')
   const teams = await response.json()
+  console.log(teams)
   return teams
 }
 

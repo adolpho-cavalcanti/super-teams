@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nome": "Santos",
-      "imagem": "/santos.png",
+      "imagem": "/times/santos.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -12,7 +12,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 3
         }
@@ -21,7 +21,7 @@
     {
       "id": 2,
       "nome": "São Paulo",
-      "imagem": "/saopaulo.png",
+      "imagem": "/times/saopaulo.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -30,7 +30,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 3
         }
@@ -39,7 +39,7 @@
     {
       "id": 3,
       "nome": "Grêmio",
-      "imagem": "/gremio.png",
+      "imagem": "/times/gremio.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -48,7 +48,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 3
         }
@@ -57,7 +57,7 @@
     {
       "id": 4,
       "nome": "Cruzeiro",
-      "imagem": "/cruzeiro.png",
+      "imagem": "/times/cruzeiro.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -66,7 +66,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 2
         }
@@ -75,7 +75,7 @@
     {
       "id": 5,
       "nome": "Internacional",
-      "imagem": "/inter.png",
+      "imagem": "/times/inter.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -84,7 +84,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 2
         }
@@ -93,7 +93,7 @@
     {
       "id": 6,
       "nome": "Palmeiras",
-      "imagem": "/palmeiras.png",
+      "imagem": "/times/palmeiras.png",
       "nacionalidade": {
         "nome": "Brasil",
         "bandeira": "/bandeiras/brasil.png"
@@ -102,7 +102,7 @@
         {
           "id": 1,
           "nome": "Libertadores da América",
-          "imagem": "/libertadores.png",
+          "imagem": "/trofeus/libertadores.png",
           "peso": 10,
           "qtdTitulos": 3
         }
