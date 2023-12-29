@@ -1,14 +1,20 @@
+import { api } from '@/data/api'
+import { Team } from '@/data/types/teams'
 import Image from 'next/image'
 import Link from 'next/link'
 
-async function getAllTeams() {
-  const response = await fetch('http://localhost:3000/api/teams')
+async function getAllTeams(): Promise<Team[]> {
+  const response = await api('/teams')
   const teams = await response.json()
   console.log(teams)
   return teams
 }
 
-function Champions({ champions }) {
+interface ChampionsProps {
+  champions: Team['titulos']
+}
+
+function Champions({ champions }: ChampionsProps) {
   return (
     <>
       {champions.map((champion) => {
@@ -40,7 +46,7 @@ export default async function Home() {
 
   return (
     <div className="grid max-h-[860px] grid-cols-9 grid-rows-9 gap-6">
-      {teams.map((team: any) => {
+      {teams.map((team: Team) => {
         return (
           <Link
             key={team.id}
