@@ -24,7 +24,7 @@ export default async function Home() {
         return (
           <Link
             key={team.id}
-            href="/"
+            href={`/team/${team.slug}`}
             className="group relative col-span-3 row-span-3 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-12 min-h-[300px] overflow-hidden flex justify-center items-end"
           >
             <Image

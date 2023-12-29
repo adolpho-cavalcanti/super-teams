@@ -2,7 +2,8 @@
   "teams": [
     {
       "id": 1,
-      "nome": "Santos",
+      "slug": "santos",
+      "nome": "Santos Futebol Clube",
       "imagem": "/times/santos.png",
       "nacionalidade": {
         "nome": "Brasil",
@@ -20,7 +21,8 @@
     },
     {
       "id": 2,
-      "nome": "São Paulo",
+      "slug": "sao-paulo",
+      "nome": "São Paulo Futebol Clube",
       "imagem": "/times/saopaulo.png",
       "nacionalidade": {
         "nome": "Brasil",
@@ -38,7 +40,8 @@
     },
     {
       "id": 3,
-      "nome": "Grêmio",
+      "slug": "gremio",
+      "nome": "Grêmio Foot-Ball Porto Alegrense",
       "imagem": "/times/gremio.png",
       "nacionalidade": {
         "nome": "Brasil",
@@ -56,7 +59,8 @@
     },
     {
       "id": 4,
-      "nome": "Cruzeiro",
+      "slug": "cruzeiro",
+      "nome": "Cruzeiro Esporte Clube",
       "imagem": "/times/cruzeiro.png",
       "nacionalidade": {
         "nome": "Brasil",
@@ -74,7 +78,8 @@
     },
     {
       "id": 5,
-      "nome": "Internacional",
+      "slug": "internacional",
+      "nome": "Sport Club Internacional",
       "imagem": "/times/inter.png",
       "nacionalidade": {
         "nome": "Brasil",
@@ -92,7 +97,8 @@
     },
     {
       "id": 6,
-      "nome": "Palmeiras",
+      "slug": "palmeiras",
+      "nome": "Sociedade Esportiva Palmeiras",
       "imagem": "/times/palmeiras.png",
       "nacionalidade": {
         "nome": "Brasil",
