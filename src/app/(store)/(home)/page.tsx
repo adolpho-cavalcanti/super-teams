@@ -1,44 +1,18 @@
+import Champions from '@/components/champions'
 import { api } from '@/data/api'
 import { Team } from '@/data/types/teams'
 import Image from 'next/image'
 import Link from 'next/link'
 
 async function getAllTeams(): Promise<Team[]> {
-  const response = await api('/teams')
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  const response = await api('/teams', {
+    next: {
+      revalidate: 10,
+    },
+  })
   const teams = await response.json()
-  console.log(teams)
   return teams
-}
-
-interface ChampionsProps {
-  champions: Team['titulos']
-}
-
-function Champions({ champions }: ChampionsProps) {
-  return (
-    <>
-      {champions.map((champion) => {
-        return (
-          <div
-            key={champion.id}
-            className="absolute bottom-2 left-2 h-18 flex items-end max-w-[280px]  p-2"
-          >
-            <Image
-              src={champion.imagem}
-              className="group-hover:scale-105 transition-transform duration-500"
-              width={50}
-              height={50}
-              quality={100}
-              alt=""
-            />
-            <span className="flex h-full items-center justify-center rounded-full bg-[#d0d057] px-4 font-semibold">
-              {champion.qtdTitulos}
-            </span>
-          </div>
-        )
-      })}
-    </>
-  )
 }
 
 export default async function Home() {
