@@ -43,9 +43,9 @@ export default async function Home() {
 
             <Champions champions={team.titulos} />
 
-            <div className="absolute bottom-2 right-2 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-black bg-black/60 p-1">
-              <span className="flex h-full items-center justify-center rounded-full bg-[#d0d057] px-4 font-semibold">
-                Compare
+            <div className="absolute bottom-2 right-2 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 p-1">
+              <span className="flex h-full items-center justify-center rounded-full bg-emerald-600 text-white px-4 font-semibold">
+                Veja mais
               </span>
             </div>
           </Link>

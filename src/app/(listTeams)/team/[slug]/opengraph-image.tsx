@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og'
-import colors from 'tailwindcss/colors'
-
 import { api } from '@/data/api'
 import { env } from '@/env'
 import { Team } from '@/data/types/teams'

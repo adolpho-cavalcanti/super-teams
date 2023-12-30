@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Header from '../../components/header'
-import { CompareTeamProvider } from '../contexts/cart-context'
+import { CompareTeamProvider } from '../../contexts/cart-context'
 
 export default function ListTeamsLayout({ children }: { children: ReactNode }) {
   return (

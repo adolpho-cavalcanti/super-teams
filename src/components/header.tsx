@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { Search, Trophy, X } from 'lucide-react'
+import { Search } from 'lucide-react'
 import Image from 'next/image'
+import { CompareTeamsWidget } from './compare-teams-widget'
 
 export default function Header() {
   return (
@@ -17,14 +18,7 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <Trophy className="h-8 w-8 text-red-700" />
-            <X className="h-4 w-4" />
-            <Trophy className="h-8 w-8 text-green-700" />
-            <span className="text-sm">Compare 0</span>
-          </div>
-        </div>
+        <CompareTeamsWidget />
 
         <div className="w-px h-4 bg-zinc-700" />
 

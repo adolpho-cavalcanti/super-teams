@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 import { Team } from '@/data/types/teams'
 import { api } from '@/data/api'
+import { AddToCompareTeamsButton } from '@/components/add-to-compare-teams-button'
 
 interface TeamSlugProps {
   params: {
@@ -90,12 +91,7 @@ export default async function ProductPage({ params }: TeamSlugProps) {
           {renderizarTitulos(team)}
         </div>
 
-        <button
-          type="button"
-          className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold text-white"
-        >
-          Adicionar ao Guia de Comparação
-        </button>
+        <AddToCompareTeamsButton teamId={team.id} />
       </div>
     </div>
   )
