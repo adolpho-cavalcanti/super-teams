@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Metadata } from 'next'
 import { Team } from '@/data/types/teams'
 import { api } from '@/data/api'
 
@@ -16,6 +17,16 @@ async function getTeamBySlug(slug: string): Promise<Team> {
   })
   const team = await response.json()
   return team
+}
+
+export async function generateMetadata({
+  params,
+}: TeamSlugProps): Promise<Metadata> {
+  const team = await getTeamBySlug(params.slug)
+
+  return {
+    title: team.nome,
+  }
 }
 
 const renderizarTitulos = (team: Team) => {

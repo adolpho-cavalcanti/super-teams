@@ -30,6 +30,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 8
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 1
         }
       ]
     },
@@ -63,6 +70,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 6
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 1
         }
       ]
     },
@@ -96,6 +110,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 3
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 5
         }
       ]
     },
@@ -129,6 +150,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 4
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 6
         }
       ]
     },
@@ -162,6 +190,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 3
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 1
         }
       ]
     },
@@ -195,6 +230,13 @@
           "imagem": "/trofeus/brasileirao.png",
           "peso": 7,
           "qtdTitulos": 12
+        },
+        {
+          "id": 4,
+          "nome": "Copa do Brasil",
+          "imagem": "/trofeus/copa-do-brasil.jpg",
+          "peso": 3,
+          "qtdTitulos": 4
         }
       ]
     }

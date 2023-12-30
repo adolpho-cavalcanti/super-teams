@@ -1,6 +1,7 @@
 import Champions from '@/components/champions'
 import { api } from '@/data/api'
 import { Team } from '@/data/types/teams'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,6 +14,10 @@ async function getAllTeams(): Promise<Team[]> {
   })
   const teams = await response.json()
   return teams
+}
+
+export const metadata: Metadata = {
+  title: 'Home',
 }
 
 export default async function Home() {
