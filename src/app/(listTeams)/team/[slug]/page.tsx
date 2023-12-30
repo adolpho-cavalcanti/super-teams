@@ -29,6 +29,15 @@ export async function generateMetadata({
   }
 }
 
+export async function generateStaticParams() {
+  const response = await api('/teams')
+  const products: Team[] = await response.json()
+
+  return products.map((product) => {
+    return { slug: product.slug }
+  })
+}
+
 const renderizarTitulos = (team: Team) => {
   const rows: JSX.Element[] = []
   let increment = 0
