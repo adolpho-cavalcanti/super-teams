@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     template: '%s | Super Teams',
-    default: 'devstore',
+    default: 'Super Teams',
   },
 }
 
