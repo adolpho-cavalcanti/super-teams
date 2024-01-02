@@ -11,11 +11,9 @@ interface TeamSlugProps {
 }
 
 async function getTeamBySlug(slug: string): Promise<Team> {
-  const response = await api(`/teams/${slug}`, {
-    next: {
-      revalidate: 10,
-    },
-  })
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
+
+  const response = await fetch(`${baseUrl}/teams/${slug}`)
   const team = await response.json()
   return team
 }
@@ -28,15 +26,6 @@ export async function generateMetadata({
   return {
     title: team.nome,
   }
-}
-
-export async function generateStaticParams() {
-  const response = await api('/teams')
-  const products: Team[] = await response.json()
-
-  return products.map((product) => {
-    return { slug: product.slug }
-  })
 }
 
 const renderizarTitulos = (team: Team) => {

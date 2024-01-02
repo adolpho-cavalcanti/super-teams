@@ -6,13 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getAllTeams(): Promise<Team[]> {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-  const response = await api('/teams', {
-    next: {
-      revalidate: 10,
-    },
-  })
-  const teams = await response.json()
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
+
+  const response = await fetch(`${baseUrl}/teams`)
+  const { teams }: { teams: Team[] } = await response.json()
   return teams
 }
 

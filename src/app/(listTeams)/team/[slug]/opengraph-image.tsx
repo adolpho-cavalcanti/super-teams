@@ -15,11 +15,9 @@ export const size = {
 export const contentType = 'image/png'
 
 async function getTeamBySlug(slug: string): Promise<Team> {
-  const response = await api(`/teams/${slug}`, {
-    next: {
-      revalidate: 60 * 15, // 15 minutes
-    },
-  })
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
+
+  const response = await fetch(`${baseUrl}/teams/${slug}`)
 
   const team = await response.json()
 
