@@ -1,11 +1,10 @@
 'use client'
 
-import { useCompareTeams } from '@/contexts/cart-context'
+import { useCompareTeams } from '@/contexts/compare-team-context'
 import { Trophy, X } from 'lucide-react'
 
 export function CompareTeamsWidget() {
   const { items } = useCompareTeams()
-
   return (
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-2">

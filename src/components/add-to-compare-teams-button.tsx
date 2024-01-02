@@ -1,27 +1,30 @@
 'use client'
 
-import { useCompareTeams } from '@/contexts/cart-context'
+import { useCompareTeams } from '@/contexts/compare-team-context'
+import { Team } from '@/data/types/teams'
+import Link from 'next/link'
 
 export interface AddToCompareTeamsButtonProps {
-  teamId: number
+  team: Team
 }
 
 export function AddToCompareTeamsButton({
-  teamId,
+  team,
 }: AddToCompareTeamsButtonProps) {
   const { addCompareTeam } = useCompareTeams()
 
   function handleAddTeamToCompare() {
-    addCompareTeam(teamId)
+    addCompareTeam(team)
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleAddTeamToCompare}
+    <Link
+      href="/team/compare"
       className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold text-white"
     >
-      Adicionar ao Guia de Comparação
-    </button>
+      <button type="button" onClick={handleAddTeamToCompare}>
+        Adicionar ao Guia de Comparação
+      </button>
+    </Link>
   )
 }

@@ -52,7 +52,7 @@ const renderizarTitulos = (team: Team) => {
   return rows
 }
 
-export default async function ProductPage({ params }: TeamSlugProps) {
+export default async function TeamPage({ params }: TeamSlugProps) {
   const team = await getTeamBySlug(params.slug)
 
   return (
@@ -79,7 +79,7 @@ export default async function ProductPage({ params }: TeamSlugProps) {
           {renderizarTitulos(team)}
         </div>
 
-        <AddToCompareTeamsButton teamId={team.id} />
+        <AddToCompareTeamsButton team={team} />
       </div>
     </div>
   )
