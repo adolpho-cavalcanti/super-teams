@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og'
-import { api } from '@/data/api'
-import { env } from '@/env'
 import { Team } from '@/data/types/teams'
 
 export const runtime = 'edge'
@@ -31,7 +29,7 @@ export default async function OgImage({
 }) {
   const team = await getTeamBySlug(params.slug)
 
-  const teamImageURL = new URL(team.imagem, env.APP_URL).toString()
+  const teamImageURL = new URL(team.imagem, process.env.APP_URL).toString()
 
   return new ImageResponse(
     (

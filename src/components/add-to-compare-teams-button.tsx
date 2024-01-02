@@ -6,7 +6,9 @@ export interface AddToCompareTeamsButtonProps {
   teamId: number
 }
 
-export function AddToCompareTeamsButton({ teamId }: AddToCompareTeamsButtonProps) {
+export function AddToCompareTeamsButton({
+  teamId,
+}: AddToCompareTeamsButtonProps) {
   const { addCompareTeam } = useCompareTeams()
 
   function handleAddTeamToCompare() {

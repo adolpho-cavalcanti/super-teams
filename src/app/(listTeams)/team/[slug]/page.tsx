@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Metadata } from 'next'
 import { Team } from '@/data/types/teams'
-import { api } from '@/data/api'
 import { AddToCompareTeamsButton } from '@/components/add-to-compare-teams-button'
 
 interface TeamSlugProps {

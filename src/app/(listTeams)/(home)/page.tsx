@@ -1,5 +1,4 @@
 import Champions from '@/components/champions'
-import { api } from '@/data/api'
 import { Team } from '@/data/types/teams'
 import { Metadata } from 'next'
 import Image from 'next/image'

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Search } from 'lucide-react'
-import Image from 'next/image'
 import { CompareTeamsWidget } from './compare-teams-widget'
 
 export default function Header() {
