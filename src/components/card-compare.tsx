@@ -1,20 +1,18 @@
+'use client'
+
 import { Team } from '@/data/types/teams'
+import { somarPontos } from '@/functions/somar-pontos'
 import Image from 'next/image'
 
 export interface AddToCompareTeamsButtonProps {
   team: Team
 }
 
-function somarPontos(team: Team) {
-  const pointsForChampionship = team.titulos.reduce((total, titulo) => {
-    // eslint-disable-next-line prettier/prettier
-    return total + (titulo.peso * titulo.qtdTitulos)
-  }, 0)
-
-  return pointsForChampionship
-}
-
 export function CardCompare({ team }: AddToCompareTeamsButtonProps) {
+  if (!team || !team.imagem) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <div className="flex flex-col h-90 justify-between gap-4 items-center col-span-4 row-span-9 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-12 min-h-[300px] overflow-hidden">
       <Image
@@ -38,62 +36,22 @@ export function CardCompare({ team }: AddToCompareTeamsButtonProps) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[0].nome}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[0].qtdTitulos}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[0].peso}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[0].peso * team.titulos[0].qtdTitulos}
-              </td>
-            </tr>
-            <tr>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[1].nome}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[1].qtdTitulos}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[1].peso}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[1].peso * team.titulos[1].qtdTitulos}
-              </td>
-            </tr>
-            <tr>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[2].nome}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[2].qtdTitulos}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[2].peso}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[2].peso * team.titulos[2].qtdTitulos}
-              </td>
-            </tr>
-            <tr>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[3].nome}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[3].qtdTitulos}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[3].peso}
-              </td>
-              <td className="py-2 px-4 border-b text-center">
-                {team.titulos[3].peso * team.titulos[3].qtdTitulos}
-              </td>
-            </tr>
+            {Array.from({ length: team.titulos.length }, (_, index) => (
+              <tr key={index}>
+                <td className="py-2 px-4 border-b text-center">
+                  {team.titulos[index].nome}
+                </td>
+                <td className="py-2 px-4 border-b text-center">
+                  {team.titulos[index].qtdTitulos}
+                </td>
+                <td className="py-2 px-4 border-b text-center">
+                  {team.titulos[index].peso}
+                </td>
+                <td className="py-2 px-4 border-b text-center">
+                  {team.titulos[index].peso * team.titulos[index].qtdTitulos}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
 

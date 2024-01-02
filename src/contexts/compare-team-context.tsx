@@ -12,7 +12,11 @@ interface CompareTeamContextType {
 const CompareTeamContext = createContext({} as CompareTeamContextType)
 
 export function CompareTeamProvider({ children }: { children: ReactNode }) {
-  const storedItems = JSON.parse(localStorage.getItem('teams') || 'null')
+  const storedItems =
+    typeof window !== 'undefined'
+      ? JSON.parse(localStorage.getItem('teams') || 'null')
+      : null
+
   const [compareTeamItems, setCompareTeamItems] = useState<Team[]>(
     storedItems || [],
   )
@@ -21,7 +25,9 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
   function addCompareTeam(team: Team) {
     if (compareTeamItems?.length < 2) {
       setCompareTeamItems((state) => {
-        localStorage.setItem('teams', JSON.stringify([...state, team]))
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('teams', JSON.stringify([...state, team]))
+        }
         return [...state, team]
       })
     } else {
