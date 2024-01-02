@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 import { Team } from '@/data/types/teams'
 import { AddToCompareTeamsButton } from '@/components/add-to-compare-teams-button'
+import { renderizarTitulos } from '@/functions/renderizar-titulos'
 
 interface TeamSlugProps {
   params: {
@@ -27,31 +28,6 @@ export async function generateMetadata({
   }
 }
 
-const renderizarTitulos = (team: Team) => {
-  const rows: JSX.Element[] = []
-  let increment = 0
-
-  team.titulos.forEach((titulo) => {
-    for (let i = 1; i <= titulo.qtdTitulos; i++) {
-      increment++
-      rows.push(
-        <div key={increment}>
-          <Image
-            src={titulo.imagem}
-            className="group-hover:scale-105 transition-transform duration-500"
-            width={50}
-            height={50}
-            quality={100}
-            alt={titulo.nome}
-          />
-        </div>,
-      )
-    }
-  })
-
-  return rows
-}
-
 export default async function TeamPage({ params }: TeamSlugProps) {
   const team = await getTeamBySlug(params.slug)
 
@@ -69,11 +45,6 @@ export default async function TeamPage({ params }: TeamSlugProps) {
 
       <div className="col-span-2 flex flex-col justify-center px-12">
         <h1 className="text-3xl font-bold leading-tight">{team.nome}</h1>
-
-        {/* <p className="mt-2 flex gap-2 leading-relaxed text-zinc-400">
-          <Crown className="h-6 w-6 text-yellow-500" />
-          Time do Rei Pelé e um dos maiores da história!
-        </p> */}
 
         <div className="mt-8 flex items-center gap-1">
           {renderizarTitulos(team)}

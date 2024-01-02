@@ -2,7 +2,6 @@
 
 import { useCompareTeams } from '@/contexts/compare-team-context'
 import { Team } from '@/data/types/teams'
-import Link from 'next/link'
 
 export interface AddToCompareTeamsButtonProps {
   team: Team
@@ -18,13 +17,12 @@ export function AddToCompareTeamsButton({
   }
 
   return (
-    <Link
-      href="/team/compare"
+    <button
+      type="button"
+      onClick={handleAddTeamToCompare}
       className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold text-white"
     >
-      <button type="button" onClick={handleAddTeamToCompare}>
-        Adicionar ao Guia de Comparação
-      </button>
-    </Link>
+      Adicionar ao Guia de Comparação
+    </button>
   )
 }
