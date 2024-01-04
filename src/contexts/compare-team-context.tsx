@@ -22,13 +22,23 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
   const [maxLimitTeams, setMaxLimitTeams] = useState<boolean>(false)
 
   function addCompareTeam(team: Team) {
-    if (compareTeamItems?.length < 2) {
-      setCompareTeamItems((state) => {
-        return [...state, team]
-      })
-    } else {
-      setMaxLimitTeams(true)
-    }
+    setCompareTeamItems((state) => {
+      const currentState = state || []
+      const teamInCompare = state && state.some((item) => item.id === team.id)
+
+      let updatedState
+
+      if (teamInCompare) {
+        updatedState = currentState.map((item) =>
+          item.id === team.id ? team : item,
+        )
+      } else {
+        updatedState = [...currentState, team]
+      }
+
+      localStorage.setItem('teams', JSON.stringify(updatedState))
+      return updatedState
+    })
   }
 
   useEffect(() => {
