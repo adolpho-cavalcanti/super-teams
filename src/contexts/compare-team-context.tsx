@@ -1,7 +1,13 @@
 'use client'
 
 import { Team } from '@/data/types/teams'
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 interface CompareTeamContextType {
   maxLimit: boolean
@@ -24,6 +30,17 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
       setMaxLimitTeams(true)
     }
   }
+
+  useEffect(() => {
+    console.log('compareTeamItems', compareTeamItems)
+    const storedItems =
+      typeof window !== 'undefined'
+        ? JSON.parse(localStorage.getItem('teams') || 'null')
+        : null
+    console.log('storedItems', storedItems)
+    setCompareTeamItems(storedItems)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <CompareTeamContext.Provider
