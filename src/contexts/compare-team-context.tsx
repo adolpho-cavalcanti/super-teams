@@ -1,13 +1,7 @@
 'use client'
 
 import { Team } from '@/data/types/teams'
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
 
 interface CompareTeamContextType {
   maxLimit: boolean
