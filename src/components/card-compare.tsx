@@ -5,6 +5,8 @@ import { Team } from '@/data/types/teams'
 import { somarPontos } from '@/functions/somar-pontos'
 import { Trash } from 'lucide-react'
 import Image from 'next/image'
+import { Skeleton } from './skeleton'
+import Link from 'next/link'
 
 export interface AddToCompareTeamsButtonProps {
   team: Team
@@ -14,7 +16,18 @@ export function CardCompare({ team }: AddToCompareTeamsButtonProps) {
   const { removeCompareTeam } = useCompareTeams()
 
   if (!team || !team.imagem) {
-    return <p>Carregando...</p>
+    return (
+      <div className="col-span-4 row-span-9 my-4 py-4 flex flex-col">
+        <h1 className="font-bold text-lg">Volte e selecione um time</h1>
+        <Link
+          href="/"
+          className="my-12 flex h-12 items-center justify-center rounded-full bg-[#d2d2d2] border-2 border-[#333] font-semibold text-[#333]"
+        >
+          VOLTAR PARA A PÁGINA INICIAL
+        </Link>
+        <Skeleton className="flex flex-col h-90 justify-between gap-4 items-center col-span-4 row-span-9 rounded-lg bg-[#333] p-4 min-h-[300px] overflow-hidden" />
+      </div>
+    )
   }
 
   function handleRemoveTeamToCompare() {
