@@ -13,6 +13,7 @@ interface CompareTeamContextType {
   maxLimit: boolean
   items: Team[]
   addCompareTeam: (team: Team) => void
+  removeCompareTeam: (teamId: number) => void
 }
 
 const CompareTeamContext = createContext({} as CompareTeamContextType)
@@ -54,12 +55,23 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  function removeCompareTeam(teamId: number) {
+    setCompareTeamItems((state) => {
+      const currentState = state || []
+      const updatedState = currentState.filter((item) => item.id !== teamId)
+
+      localStorage.setItem('teams', JSON.stringify(updatedState))
+      return updatedState
+    })
+  }
+
   return (
     <CompareTeamContext.Provider
       value={{
         maxLimit: maxLimitTeams,
         items: compareTeamItems,
         addCompareTeam,
+        removeCompareTeam,
       }}
     >
       {children}
