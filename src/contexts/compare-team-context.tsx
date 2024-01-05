@@ -22,6 +22,10 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
   const [maxLimitTeams, setMaxLimitTeams] = useState<boolean>(false)
 
   function addCompareTeam(team: Team) {
+    if (compareTeamItems?.length >= 2) {
+      setMaxLimitTeams(true)
+      return
+    }
     setCompareTeamItems((state) => {
       const currentState = state || []
       const teamInCompare = state && state.some((item) => item.id === team.id)
@@ -42,12 +46,10 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    console.log('compareTeamItems', compareTeamItems)
     const storedItems =
       typeof window !== 'undefined'
         ? JSON.parse(localStorage.getItem('teams') || 'null')
         : null
-    console.log('storedItems', storedItems)
     setCompareTeamItems(storedItems)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
