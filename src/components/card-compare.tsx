@@ -35,7 +35,7 @@ export function CardCompare({ team }: AddToCompareTeamsButtonProps) {
   }
 
   return (
-    <div className="flex flex-col h-90 justify-between gap-4 items-center col-span-4 row-span-9 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-4 min-h-[300px] overflow-hidden">
+    <div className="flex flex-col h-90 justify-between gap-4 items-center col-span-4 md:col-span-4 row-span-9 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-4 min-h-[300px] overflow-hidden">
       <button className="self-end" onClick={handleRemoveTeamToCompare}>
         <Trash className="h-8 w-8 text-red-700" />
       </button>

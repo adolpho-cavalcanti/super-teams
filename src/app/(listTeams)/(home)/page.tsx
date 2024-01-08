@@ -20,13 +20,13 @@ export default async function Home() {
   const teams = await getAllTeams()
 
   return (
-    <div className="grid max-h-[860px] grid-cols-9 grid-rows-9 gap-6">
+    <div className="cards max-h-[860px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mt-8">
       {teams.map((team: Team) => {
         return (
           <Link
             key={team.id}
             href={`/team/${team.slug}`}
-            className="group relative col-span-3 row-span-3 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-12 min-h-[300px] overflow-hidden flex justify-center items-end"
+            className="group relative rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-12 min-h-[300px] overflow-hidden flex justify-center items-end"
           >
             <Image
               src={team.imagem}
