@@ -2,7 +2,6 @@
 
 import { useCompareTeams } from '@/contexts/compare-team-context'
 import { Team } from '@/data/types/teams'
-import Link from 'next/link'
 
 export interface AddToCompareTeamsButtonProps {
   team: Team

@@ -23,10 +23,10 @@ export function CardCompare({ teams }: AddToCompareTeamsButtonProps) {
         return (
           <div
             key={team.id}
-            className="flex flex-col items-center gap-2 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] p-4 min-h-[680px] "
+            className="flex flex-col items-center gap-2 rounded-lg border-4 border-gray-400 bg-[#f2f2f2] py-4 min-h-[680px] "
           >
             <button
-              className="self-end"
+              className="self-end mr-2"
               onClick={() => handleRemoveTeamToCompare(team)}
             >
               <Trash className="h-8 w-8 text-red-700" />
