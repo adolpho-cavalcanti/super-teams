@@ -10,7 +10,6 @@ import {
 } from 'react'
 
 interface CompareTeamContextType {
-  maxLimit: boolean
   items: Team[]
   addCompareTeam: (team: Team) => void
   removeCompareTeam: (teamId: number) => void
@@ -20,13 +19,8 @@ const CompareTeamContext = createContext({} as CompareTeamContextType)
 
 export function CompareTeamProvider({ children }: { children: ReactNode }) {
   const [compareTeamItems, setCompareTeamItems] = useState<Team[]>([])
-  const [maxLimitTeams, setMaxLimitTeams] = useState<boolean>(false)
 
   function addCompareTeam(team: Team) {
-    if (compareTeamItems?.length >= 2) {
-      setMaxLimitTeams(true)
-      return
-    }
     setCompareTeamItems((state) => {
       const currentState = state || []
       const teamInCompare = state && state.some((item) => item.id === team.id)
@@ -68,7 +62,6 @@ export function CompareTeamProvider({ children }: { children: ReactNode }) {
   return (
     <CompareTeamContext.Provider
       value={{
-        maxLimit: maxLimitTeams,
         items: compareTeamItems,
         addCompareTeam,
         removeCompareTeam,
